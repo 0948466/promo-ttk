@@ -1,0 +1,26 @@
+<%-if @result == true %>
+  $("#answer_<%= @answer.question_id %>_<%= @answer.answer_id %>").parent().addClass("check_true");
+<%-else %>
+  $("#answer_<%= @answer.question_id %>_<%= @answer.answer_id %>").parent().addClass("check_false");
+<%-end %>
+$('.radio').each(function() {
+    if ($(this).hasClass('check_false') == false && $(this).hasClass('check_true') == false) {
+        return $(this).addClass('check_disable check_true');
+    }
+});
+if ($('.check_true').length === 2) {
+    $('.check_true').each(function() {
+        if ($(this).hasClass('check_disable') == true ) {
+            return $(this).removeClass('check_true');
+        }
+    });
+};
+
+
+
+rendered_objects = "<%=j render('partials/points', :@theme => @answer.question.theme, :@question => @answer.question)  %>";
+$('#footer_points').html(rendered_objects);
+
+rendered_link = "<%=j render('partials/links_game', :@theme => @answer.question.theme, :@finish => @finish) %>";
+$('#render_link').html(rendered_link);
+$('#render_link a').css('display', 'inline-flex');

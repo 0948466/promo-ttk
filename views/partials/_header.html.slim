@@ -1,0 +1,54 @@
+header.main-header
+  .main-header__inner.container-inner
+    .main-header__logos
+      = link_to 'http://eurekahd.tv', target: '_blank', rel: 'noopener', class: 'main-header__logo-eu' do
+        = image_tag ('logo/logo-eureka.png'), alt: "Телеканал Эврика"
+      = link_to 'https://myttk.ru', target: '_blank', rel: 'noopener', class: 'main-header__logo-ttk' do
+        = image_tag ('logo/logo-TTK.png'), alt: "TTK"
+      = link_to '/', class: 'main-header__logo-6-senses' do
+        = image_tag ('logo/logo-6-senses.png'), alt: "6-senses"
+    .main-header__user-wrap
+      - if user_signed_in?
+        - if current_user.status.try(:name)
+          .main-header__bottom
+            p.main-header__status
+              |статус
+              br
+              span ==current_user.status.try(:name)
+      .main-header__user
+        - if user_signed_in?
+          p.main-header__user__text
+            = current_user.first_name
+          .main-header__user__link-wrap
+            = link_to 'Личный кабинет', edit_user_registration_path, class: 'main-header__user__link'
+            = link_to 'Выйти', destroy_user_session_path, method: 'delete', class: 'main-header__user__link'
+        -else
+          = link_to 'Войти', new_user_session_path, class: 'main-header__user__text'
+          = link_to 'Регистрация', new_user_registration_path, class: 'main-header__user__link'
+
+
+    .main-header__sandwich.js-sandwich
+      .main-header__sandwich__lines
+      ul.main-header__sidebar.js-sidebar
+        - if user_signed_in?
+          li
+            = link_to 'Личный кабинет', edit_user_registration_path, class: 'text-big'
+          li
+            = link_to 'Выйти', destroy_user_session_path, method: 'delete', class: 'text-big'
+        - else
+          li
+            = link_to 'Войти', new_user_session_path, class: 'text-big'
+          li
+            = link_to 'Регистрация', new_user_registration_path, class: 'text-big'
+        li
+          = link_to 'Правила', rules_path, class: 'text-big'
+        li
+          = link_to 'Призы', prize_path, class: 'text-big'
+
+        li
+          = link_to 'http://eurekahd.tv', target: '_blank', rel: 'noopener', class: 'main-header__logo-eu' do
+            = image_tag ('logo/logo-eureka.png'), alt: "Телеканал Эврика"
+        li
+          = link_to 'https://myttk.ru', target: '_blank', rel: 'noopener', class: 'main-header__logo-ttk' do
+            = image_tag ('logo/logo-TTK.png'), alt: "TTK"
+

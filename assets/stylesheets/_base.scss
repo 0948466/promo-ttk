@@ -1,0 +1,58 @@
+body {
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background: url(image_path("background/game-bg.jpg")) no-repeat center;
+    background-size: cover;
+    @include w320-767 {
+      right: auto;
+      bottom: auto;
+      width: 100vw;
+      height: 110vh;
+      background-size: cover;
+    }
+  }
+
+  &.MainIndex::before {
+    background-image: url(image_path("background/background-index.jpg"));
+  }
+}
+
+a:hover {
+  filter: brightness(125%);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1920px;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.content {
+  margin-bottom: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.container-inner {
+  margin: 0 auto;
+  max-width: 1180px;
+  width: 100%;
+  box-sizing: border-box;
+}

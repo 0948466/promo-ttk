@@ -1,0 +1,7 @@
+footer.main-footer
+  #footer_points
+    = yield :points
+  .main-footer__links
+    = link_to 'Правила', rules_path,  class: 'main-footer__link'
+    = link_to 'Призы', prize_path, class: 'main-footer__link'
+

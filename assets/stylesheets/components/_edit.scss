@@ -1,0 +1,41 @@
+.edit {
+  padding: 60px 0 80px 0;
+  max-width: 870px;
+  &__title {
+    margin-bottom: 25px;
+  }
+  .edit_user {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include w320-767 {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__all-score {
+    padding: 14px 20px 14px 35px;
+    margin-top: 37px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .2);
+    @include responsive-font-size(24);
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #ffffff;
+    @include w320-767 {
+      order: -1;
+      margin-bottom: 30px;
+    }
+    p:first-of-type {
+      margin-bottom: 10px;
+    }
+    span {
+      margin-left: 15px;
+    }
+  }
+}

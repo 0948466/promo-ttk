@@ -1,0 +1,94 @@
+.main {
+  padding: 62px 0 131px;
+  &__title {
+    margin-bottom: 17px;
+    @include responsive-font-size(80);
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.1;
+    letter-spacing: -0.8px;
+    text-align: center;
+    color: #1a161b;
+    text-transform: uppercase;
+  }
+  &__text {
+    margin-bottom: 0;
+    @include responsive-font-size(30);
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.35;
+    letter-spacing: normal;
+    text-align: center;
+    color: #000000;
+  }
+  &__feelings {
+    display: inline-flex;
+    margin: 25px auto 80px;
+    @include w320-767 {
+      display: flex;
+      max-width: 80%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+  &__feelings__item {
+    position: relative;
+    padding-top: 84px;
+    &:not(:last-of-type) {
+      margin-right: 30px;
+    }
+    @include w320-767 {
+      width: 30%;
+      margin-right: 1.5% !important;
+      margin-left: 1.5%
+    }
+    img {
+      position: absolute;
+      top: 42px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .img{
+
+    }
+    .image_active{
+      display: none;
+    }
+  }
+  &__feelings__text {
+    @include responsive-font-size(24);
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
+    text-align: center;
+    color: #5b6f87;
+    &_active {
+      font-weight: 500;
+      color: #030303;
+    }
+  }
+  &__btn-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 169px;
+    height: 169px;
+    box-sizing: border-box;
+    background: asset_data_url('background/bg-play.png') no-repeat center;
+    @include responsive-font-size(48);
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 50%;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,27 @@
+- set_meta_tags title: "Шесть чувств | Игра",
+        description: "Шесть чувств Игра",
+        keywords: "Шесть чувств Игра"
+
+- if @question
+  .question
+    h2.question__title
+      == @theme.name
+    = render 'question_form'
+    .js-time-start data-time-start="#{@active_time.time_start.strftime('%H:%M:%S')}"
+    #render_link
+      = render 'partials/links_game'
+
+- else
+  - if @theme.planned?
+    .popup.mist
+      .popup__inner
+        h2.title-big.mist__title
+          |Мистика
+        p.title
+          |#{l(@theme.published_at, format: '%d %B')} с #{@theme.published_at.strftime('%H:%M')} по мск для абонентов ТТК
+        = link_to 'Спасибо', '/', class: 'btn-submit mist__btn-submit'
+  - else
+    p Конец
+- if @question
+  - content_for :points do
+    = render 'partials/points'

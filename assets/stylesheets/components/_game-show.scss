@@ -1,0 +1,32 @@
+.game-show {
+  padding: 70px 38px 35px 38px;
+  @include w320-767 {
+    padding: 35px 20px 18px 20px;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__text {
+    margin-bottom: 15px;
+  }
+  &__status {
+    margin-bottom: 40px;
+  }
+  &__share {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 35px;
+  }
+  &__share__text {
+    margin-right: 35px;
+    @include responsive-font-size(16);
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #7e7e7e;
+  }
+}

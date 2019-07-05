@@ -1,0 +1,21 @@
+- set_meta_tags title: "Шесть чувств",
+        description: "Шесть чувств",
+        keywords: "Шесть чувств"
+
+section.main
+  h1.main__title
+    |Почувствуй Питер
+  p.main__text
+    |Смотри телеканал Эврика в сети ТТК
+  p.main__text
+    |Выиграй уикэнд для двоих в Санкт-Петербурге!
+  .main__feelings
+    -@theme_all.each do |item|
+      -if user_signed_in?
+        = check_theme(current_user, item)
+      -else
+        .main__feelings__item
+          = image_tag ("for-test/#{item.position}_a.png"), alt: item.name
+          p.main__feelings__text = item.name
+
+  = link_to "Играть", (user_signed_in? ? game_index_path : new_session_path(resource_name) ), class: 'main__btn-play'

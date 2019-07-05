@@ -1,0 +1,21 @@
+- set_meta_tags title: "Шесть чувств | Результат",
+        description: "Шесть чувств Результат",
+        keywords: "Шесть чувств Результат"
+.popup.game-show
+  .popup__inner
+    h2.title-big.game-show__title
+      |Вы прошли блок «#{@theme.name}»
+    p.title.game-show__text
+      |Результат: #{@points} баллов
+       <br>
+       Ваш статус:
+    h2.title-big.game-show__status
+      == current_user.status.try(:name)
+    = link_to 'Спасибо', '/', class: 'btn-submit'
+    .game-show__share
+      p.game-show__share__text
+        |Поделиться результатом
+      ul.game-show__share__icon-wrap
+        .ya-share2 data-services="vkontakte,odnoklassniki,facebook" data-bare="true" data-title="Конкурс «Шесть чувств»" data-image="#{request.base_url}#{ image_path  ('background/background-index.jpg')}"
+/ div
+/   = link_to "Приступить к следующей теме", game_index_path

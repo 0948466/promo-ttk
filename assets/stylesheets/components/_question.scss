@@ -1,0 +1,139 @@
+.question {
+  padding-top: 112px;
+  padding-bottom: 118px;
+  @include w320-767 {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  &__title {
+    margin-bottom: 20px;
+    @include responsive-font-size(60);
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.6px;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+.question_wrap {
+  &__text {
+    margin-bottom: 60px;
+    @include responsive-font-size(24);
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
+    text-align: center;
+    color: #ffffff;
+  }
+  &__timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+    width: 169px;
+    height: 73px;
+    border: dashed 1px #ffffff;
+    @include responsive-font-size(48);
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 2.66;
+    letter-spacing: -0.48px;
+    text-align: center;
+    color: #fffefe;
+    &_warning {
+      color: #e03226;
+      border-color: #e03226;
+    }
+  }
+  .wrap-radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include w320-767 {
+      flex-direction: column;
+    }
+    input {
+      display: none;
+    }
+    .radio {
+      &[data-index='0'] {
+        order: -1;
+      }
+      label {
+        display: inline-block;
+        position: relative;
+        border: solid 3px transparent;
+        cursor: pointer;
+        &:hover {
+          img {
+            filter: brightness(120%);
+          }
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background: no-repeat center;
+          background-size: contain;
+        }
+      }
+      &.check_false {
+        label {
+          border-color: #ff6800;
+          img {
+            filter: grayscale(100%);
+          }
+          &::after {
+            width: 68px;
+            height: 67px;
+            background-image: asset_data_url('icons/icon-wrong.png');
+          }
+        }
+      }
+      &.check_true {
+        label {
+          border-color: #ff6800;
+
+          img {
+            filter: grayscale(0);
+          }
+          &::after {
+            width: 70px;
+            height: 72px;
+            background-image: asset_data_url('icons/icon-right.png');
+          }
+        }
+      }
+      &.check_disable {
+        label {
+          img {
+            filter: grayscale(100%);
+          }
+        }
+      }
+      &.check_disable.check_true {
+        label {
+          border-color: transparent;
+          img {
+            filter: grayscale(0);
+          }
+        }
+      }
+
+    }
+  }
+}
+
+#render_link {
+  margin-top: 45px;
+  min-height: 50px;
+  a {
+    display: none;
+  }
+}

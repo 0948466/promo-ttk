@@ -1,0 +1,16 @@
+- set_meta_tags title: "Шесть чувств | Вопросы",
+        description: "Шесть чувств Вопросы",
+        keywords: "Шесть чувств Вопросы"
+
+.question_wrap#replace_question
+  div.question_wrap__text == @question.body
+  = form_tag('/quiz_answer', method: 'post', id: 'quiz_form_v', remote: true, authenticity_token: "true") do
+    .wrap-radio
+      p.question_wrap__timer.js-timer
+        |0:
+        span
+          |00
+      - @question.answers.order("RANDOM()").each_with_index do |answer, i|
+        .radio data-index="#{i}"
+          input.click_answer type="radio" value="#{answer.id}" name="answer[question][#{@question.id}]" id="answer_#{@question.id}_#{answer.id}" required="required"
+          label for="answer_#{@question.id}_#{answer.id}" = image_tag answer.image.url(:big)

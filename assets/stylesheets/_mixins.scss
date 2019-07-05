@@ -1,0 +1,30 @@
+$w1920: 1920px;
+$w1000: 1000px;
+$w768: 768px;
+$w320: 320px;
+
+@mixin w1920 {
+  @media only screen and (min-width: #{$w1920}) {
+    @content;
+  }
+}
+@mixin w768-1919 {
+  @media only screen and (min-width: #{$w768}) and (max-width: #{$w1920 - 1px}) {
+    @content;
+  }
+}
+@mixin w768 {
+  @media only screen and (min-width: #{$w768}) {
+    @content;
+  }
+}
+@mixin w320-767 {
+  @media only screen and (max-width: #{$w768 - 1px}) {
+    @content;
+  }
+}
+@mixin w320-999 {
+  @media only screen and (max-width: #{$w1000 - 1px}) {
+    @content;
+  }
+}

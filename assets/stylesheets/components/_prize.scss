@@ -1,0 +1,38 @@
+.prize {
+  padding: 46px 0 5px;
+  &__title {
+    @include w320-767 {
+      margin-bottom: 30px;
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    @include w320-767 {
+      flex-direction: column;
+      margin-bottom: 45px;
+      padding-bottom: 45px;
+      &:not(:last-of-type) {
+        border-bottom: 2px solid rgba(255, 255, 255, .5);
+      }
+    }
+  }
+  &__item__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 274px;
+    width: 100%;
+    @include w320-767 {
+      margin-bottom: 20px;
+    }
+  }
+  &__text-bottom {
+    margin-top: 35px;
+  }
+  &__link {
+    display: inline-block;
+    margin-top: 5px;
+  }
+}

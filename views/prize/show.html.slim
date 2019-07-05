@@ -1,0 +1,44 @@
+- set_meta_tags title: "Шесть чувств | Призы",
+        description: "Шесть чувств Призы",
+        keywords: "Шесть чувств Призы"
+
+section.prize.container-inner
+  h1.prize__title.title
+    |Призы:
+  .prize__item
+    .prize__item__left
+      = image_tag ('prizes/suitcase.png'), alt: "Чемодан"
+    .prize__item__right
+      h2.title-small
+        |Главный приз - Уикенд в Санкт-Петербурге для двоих!
+      p.text
+        |(для абонентов «ТТК»):
+        br
+        br
+        |- билеты до СПб и обратно
+        br
+        |- проживание в гостинице 4* 2 ночи
+        br
+        |- ужин в ресторане для двоих (депозитный стол
+        br
+        |- Билеты в Эрмитаж,
+        |- Билеты в музей на выбор (Гранд макет России / Вселенная воды / Иллюзиум)
+  .prize__item
+    .prize__item__left
+      = image_tag ('prizes/notebook.png'), alt: "Блокнот"
+    .prize__item__right
+      h2.title-small
+        |Для каждого 30-го авторизованного участника, достигшего ранга «Статский советник»:
+      p.text
+        |- Блокнот с логотипом телеканала «Эврика» (для каждого 30-го Статского советника)
+  .prize__item
+    .prize__item__left
+      = image_tag ('prizes/cup.png'), alt: "Термокружка"
+    .prize__item__right
+      h2.title-small
+        |Для каждого 20-го авторизованного участника, достигшего ранга «Тайный советник»:
+      p.text
+        |- Термокружка с логотипом телеканала «Эврика» (для каждого 20-го Тайного советника)
+      p.text.prize__text-bottom
+        |*количество призов ограничено.
+  = link_to '<< Назад', '/', class: 'prize__link link'

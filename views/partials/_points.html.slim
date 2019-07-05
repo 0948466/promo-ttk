@@ -1,0 +1,13 @@
+.points
+  h3.points__title Мои баллы: #{current_user.theme_points(@theme)}
+  .points__wrap
+    - current_user.theme_answers(@theme).each_with_index  do |item, index|
+      -if item.question_id == @question.id
+        .points__item.points__item_active
+          span = item.points
+      -else
+        .points__item.points__item_active.points__item_glow
+          span = item.points
+    -if current_user.theme_answers(@theme).count < 6
+      -(6-current_user.theme_answers(@theme).count).times do
+        .points__item

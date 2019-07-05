@@ -1,0 +1,37 @@
+.popup {
+  position: relative;
+  margin: 140px auto 120px auto;
+  padding: 81px 20px 94px 20px;
+  max-width: 570px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgba(25, 25, 25, .9);
+  text-align: center;
+  @include w320-767 {
+    margin-top: 70px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    box-sizing: border-box;
+    border: solid 3px rgba(224, 50, 38, .25);
+  }
+  &__inner {
+    position: relative;
+    margin: 0 auto;
+  }
+  .form-wrap {
+    position: relative;
+    margin: 0 auto;
+    .invalid-feedback {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.main-footer {
+  background-color: rgba(0, 0, 0, .7);
+  &__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 29px;
+    background-color: rgba(3,7,4, .42);
+  }
+  &__link {
+    @include responsive-font-size(16);
+    font-weight: 200;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.8;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    &:not(:last-of-type) {
+      margin-right: 25px;
+    }
+  }
+}
